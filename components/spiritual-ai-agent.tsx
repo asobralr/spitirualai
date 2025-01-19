@@ -13,9 +13,10 @@ export default function SpiritualAIAgent() {
   const [isLoading, setIsLoading] = useState(false);
 
   const getAnswer = async (question: string) => {
-    //get response from API
-    const url = process.env.API_URL;
-    const response = await fetch(`${url}/ask`, {
+    // get response from API
+    const url = process.env.NEXT_PUBLIC_API_URL;
+
+    const response = await fetch(`${url}/api/ask`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
